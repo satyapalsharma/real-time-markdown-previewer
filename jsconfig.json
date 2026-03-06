@@ -1,0 +1,56 @@
+```json
+{
+  "compilerOptions": {
+    // Base URL for path resolution. This allows absolute imports relative to the project root.
+    "baseUrl": ".",
+    // Define path aliases for easier imports.
+    // For example, instead of `import MarkdownEditor from '../../components/MarkdownEditor'`,
+    // you can use `import MarkdownEditor from '@components/MarkdownEditor'`.
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    // Specify the target JavaScript version for emitted JavaScript.
+    // `es2020` provides modern features without requiring polyfills for most modern browsers.
+    "target": "es2020",
+    // Specify the module code generation. `esnext` is suitable for bundlers like Webpack.
+    "module": "esnext",
+    // Enable JSX support and specify the JSX factory. `react-jsx` uses the new JSX transform.
+    "jsx": "react-jsx",
+    // List of library files to be included in the compilation.
+    // `dom` for browser APIs, `dom.iterable` for iterable types, `esnext` for latest ECMAScript features.
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // Allow JavaScript files to be compiled.
+    "allowJs": true,
+    // Skip type checking of all declaration files (*.d.ts). This can speed up compilation.
+    "skipLibCheck": true,
+    // Enables a full range of interoperability between CommonJS and ES Modules.
+    // This includes `allowSyntheticDefaultImports`.
+    "esModuleInterop": true,
+    // Allow default imports from modules with no default export. This is useful for
+    // libraries that don't explicitly provide a default export but are commonly imported as such.
+    "allowSyntheticDefaultImports": true,
+    // Enable all strict type-checking options. While this is a JavaScript project,
+    // it helps with JSDoc type checking and provides better editor IntelliSense.
+    "strict": true,
+    // Disallow inconsistently-cased references to the same file.
+    "forceConsistentCasingInFileNames": true,
+    // Do not emit output. This is typically used when the language service is only
+    // providing editor features and not performing actual compilation (e.g., Babel handles compilation).
+    "noEmit": true,
+    // Enable importing .json files.
+    "resolveJsonModule": true,
+    // Ensure that each file can be safely transpiled without relying on other files.
+    // This is important for tools like Babel and esbuild.
+    "isolatedModules": true,
+    // Specify module resolution strategy. `node` is standard for Node.js projects.
+    "moduleResolution": "node"
+  },
+  // Specifies the files to include in the program.
+  // We include all JavaScript and JSX files within the `src` directory.
+  "include": ["src/**/*.js", "src/**/*.jsx"],
+  // Specifies the files to exclude from the program.
+  // `node_modules` contains third-party libraries, `build` is the output directory.
+  "exclude": ["node_modules", "build"]
+}
+```
