@@ -1,0 +1,111 @@
+/*
+ * src/index.css
+ *
+ * Global styles for the Real-time Markdown Previewer application.
+ * This file sets up basic CSS resets, font definitions, and global variables
+ * that apply across the entire application.
+ */
+
+/* CSS Reset and Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensure consistent box model across all elements */
+}
+
+/* Root Variables for Theming (Optional: can be expanded for light/dark mode) */
+:root {
+  --primary-bg-color: #1a1a2e; /* Dark background for the app */
+  --secondary-bg-color: #16213e; /* Slightly lighter dark for components */
+  --text-color: #e0e0e0; /* Light text color */
+  --border-color: #0f3460; /* Subtle border color */
+  --accent-color: #e94560; /* Accent color for highlights/buttons */
+  --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; /* Modern sans-serif font */
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+}
+
+/* Body Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--primary-bg-color);
+  -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS */
+  -moz-osx-font-smoothing: grayscale; /* Improve font rendering on macOS */
+  display: flex; /* Use flexbox to center the app content if needed */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Basic Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--text-color); /* Ensure headings use the main text color */
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code blocks and inline code */
+code, pre {
+  font-family: 'Fira Code', 'SF Mono', 'Roboto Mono', monospace; /* Monospaced font for code */
+  background-color: var(--secondary-bg-color);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+}
+
+/* Utility classes (can be expanded in App.css or dedicated utility file) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Scrollbar styling for a more consistent look (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}<ctrl63>
